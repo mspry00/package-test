@@ -1,5 +1,5 @@
 <!--<Project Sdk="Microsoft.NET.Sdk">-->
-<Project>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 <!--  <PropertyGroup>-->
 <!--    <TargetFramework>netcoreapp3.1</TargetFramework>-->
 <!--    <RootNamespace>package_test</RootNamespace>-->
@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DFB110F1-4EBD-46C1-B1B2-F32505CA3EEC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+<!--    <OutputType>Library</OutputType>-->
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -18,8 +18,14 @@
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
   </ItemGroup>
-
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
