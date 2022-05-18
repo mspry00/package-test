@@ -1,0 +1,25 @@
+<!--<Project Sdk="Microsoft.NET.Sdk">-->
+<Project>
+<!--  <PropertyGroup>-->
+<!--    <TargetFramework>netcoreapp3.1</TargetFramework>-->
+<!--    <RootNamespace>package_test</RootNamespace>-->
+<!--  </PropertyGroup>-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFB110F1-4EBD-46C1-B1B2-F32505CA3EEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+  </ItemGroup>
+
+</Project>
