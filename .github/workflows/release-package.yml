@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: msbuild -property:Configuration=Release  -verbosity:m  /p:version=1.0.0.0
       - name: Pack
-        run: nuget pack package-test.csproj -Properties Configuration=Release
+        run: nuget pack ./package-test/package-test.csproj -Properties Configuration=Release
       - name: Push
         run: nuget push -src "https://nuget.pkg.github.com/mspry00/index.json" -ApiKey ${GITHUB_TOKEN} .\package-test.1.0.0.0.nupkg
         env:
