@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>$id$</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>Docomotion</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <license type="expression">MIT</license>
+        <!-- <icon>icon.png</icon> -->
+        <!--    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>-->
+        <description>q</description>
+        <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+        <copyright>$copyright$</copyright>
+        <tags>MyTag</tags>
+        <repository url="https://github.com/mspry00/package-test" type="git"/>
+    </metadata>
+</package>
