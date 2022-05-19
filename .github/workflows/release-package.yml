@@ -22,7 +22,7 @@ jobs:
       - name: Pack
         run: nuget pack ./package-test/package-test.csproj -Properties Configuration=Release
       - name: Push
-        run: nuget push .\package-test.0.0.0.nupkg  -ApiKey ${GITHUB_TOKEN} -src "https://nuget.pkg.github.com/mspry00/index.json"
+        run: nuget push .\package-test.0.0.0.nupkg  -ApiKey ${GITHUB_TOKEN} -Source "https://nuget.pkg.github.com/mspry00/index.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
     
