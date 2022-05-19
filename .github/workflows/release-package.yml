@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Build
-        run: msbuild package-test.csproj -property:Configuration=Release -property:Platform=AnyCPU -verbosity:m /p:version=1.0.0.0
+        run: msbuild -property:Configuration=Release  -verbosity:m  /p:version=1.0.0.0
       - name: Pack
         run: nuget pack package-test.csproj -Properties Configuration=Release
       - name: Push
