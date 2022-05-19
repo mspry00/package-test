@@ -13,18 +13,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Set APP_VERSION based on repo w/MinVer
-        run: |
-          dotnet tool install -g minver-cli -v q
-          APP_VERSION=`minver`
-          echo "Adding version to GITHUB_ENV: APP_VERSION=$APP_VERSION"
-          echo "APP_VERSION=$APP_VERSION" >> $GITHUB_ENV
       - name: Build
-        run: msbuild package-test.csproj -property:Configuration=Release -property:Platform=AnyCPU -verbosity:m /p:version=${APP_VERSION}
+        run: msbuild package-test.csproj -property:Configuration=Release -property:Platform=AnyCPU -verbosity:m /p:version=1.0.0.0
       - name: Pack
         run: nuget pack package-test.csproj -Properties Configuration=Release
       - name: Push
-        run: nuget push -src "https://nuget.pkg.github.com/mspry00/index.json" -ApiKey ${GITHUB_TOKEN} .\package-test.${APP_VERSION}.nupkg
+        run: nuget push -src "https://nuget.pkg.github.com/mspry00/index.json" -ApiKey ${GITHUB_TOKEN} .\package-test.1.0.0.0.nupkg
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
     
